@@ -1,204 +1,106 @@
-<!--
-*** Thanks for checking out this README Template. If you have a suggestion that would
-*** make this better, please fork the repo and create a pull request or simply open
-*** an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
--->
+# NS-Consumenten zuil
+
+Simple overview of use/purpose.
+
+## Beschrijving
+
+An in-depth paragraph about your project and overview of use.
+
+## Aanleiding
+De Nederlandse Spoorwegen vinden het erg belangrijk dat zij goed kunnen communiceren met hun klanten én van hun klanten goede of minder goede ervaringen horen. Daarom houden ze van tijd tot tijd een enquête onder de reizigers. Het nadeel van een enquête is dat het lang duurt voordat je de resultaten krijgt. De NS heeft gemerkt dat Twitter veel sneller werkt. Het lijkt de directie daarom een goed plan dat klanten hun opmerkingen/complimenten via een computer, aanwezig op elk het station, kunnen invoeren en dat deze opmerkingen dan zichtbaar worden in die stationshal.
+
+De directie is echter ook wel een beetje bang voor Twitter, want men heeft gemerkt dat het ook gebruikt kan worden als uitlaatklep voor ontevreden reizigers. Daarom is het belangrijk dat de inhoud van de Tweets worden gelezen voordat ze worden gepost op Twitter en zichtbaar worden in de stationshal. Op deze manier kunnen respectloze uitingen en bijvoorbeeld schuttingstaal eruit gefilterd worden.
+
+## Opdracht
+De opdracht die jij krijg om dit uit te werken, luidt: ontwerp en bouw een systeem met behulp van Twitter waarbij de mening van klanten zichtbaar wordt voor andere reizigers.
+
+Hiervoor gelden onderstaande eisen:
+
+## Eisen voor het systeem
+Om dit idee concreet te maken, denkt men aan de volgende systeemeisen (requirements):
+
+1. Op een computerzuil  (module 1) op een willekeurig NS-station kunnen mensen hun berichtje (hun Tweet) van maximaal 140 karakters invoeren. Dit bericht wordt in een database opgeslagen met de datum en een eventuele naam. Als deze leeg is wordt de naam "anoniem" ingevuld.
+
+2. Daarna krijgt een moderator van de NS het berichtje te zien en diegene kan kiezen voor “accept” of “reject”. Bij “reject” wordt een opmerking samen met datum en tijd aan het bericht in de database toegevoegd. De moderator werkt eerst aan het oudste bericht. Bij de NS zijn verschillende moderators. We willen bij een bericht opslaan welke moderator het bericht heeft beoordeeld.
+
+3. Bij “accept” wordt het berichtje op Twitter geplaatst via een twitteraccount. Het account bevat het woord “test” in de naam, want het gaat nu nog om een Proof-of-Concept (PoC).
+
+4. Op een ander scherm worden een aantal van de meest recente Tweets van het account getoond in de stationshal (module 3). Het is belangrijk dat deze Tweets er goed uitzien.
+
+5. Het kan zijn dat er tijdelijk geen Tweets geplaatst worden,  bijvoorbeeld als niemand gedurende een bepaalde tijd een Tweet heeft geplaatst. Zorg ervoor dat je dan het weerbericht laat zien op het scherm in de stationshal.
+
+6. De moderator moet een overzicht kunnen krijgen van de afgekeurde Tweets (module 2)
+
+Uiteindelijk zul je 3 modules en een database gebouwd hebben.
+
+## Eisen aan het ontwerp
+Het ontwerp omvat een BPMN-model en Use Case diagram met twee volledig uitgewerkte  Use Cases. Daarnaast is een conceptueel datamodel vereist. Dit model wordt verder uitgewerkt in een logisch en fysiek datamodel.
+
+## Tips voor de realisatie
+Maak het bovengenoemde systeem met behulp van Python. Het gebruik van Tkinter kan mooie resultaten opleveren, maar is niet verplicht. Je mag ook gebruik maken van een andere Python GUI library.
+
+Let op: de Twitter-API levert geen XML, maar JSON!
+
+## Technische hulpbronnen
+Technische hulpbronnen
+
+Onderstaande technische kennis wordt niet in de lessen MOD en PROG aangeboden. Je zult dit zelf moeten aanleren met de volgende tutorials of handleidingen.
+
+        Voor de database: Python DB koppeling
+        Voor het opzetten van een koppeling met Twitter: Twitter API
+        Voor een koppeling met het weerbericht, Weer API
+
+### Dependencies
+
+* Pipenv
+* Twitter API
+* Flask
+
+### Installing
 
 
 
+### Executing program
 
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Best-README-Template</h3>
-
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
-  </p>
-</p>
-
-
-
-<!-- TABLE OF CONTENTS -->
-## Table of Contents
-
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
-
-
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
-
-### Built With
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
+* Activeer pipenv omgeving 
+```
+pipenv shell
+```
+* Activeer applicatie
+```
+python3 app.py
 ```
 
-### Installation
+## Help
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-```sh
-git clone https://github.com/your_username_/Project-Name.git
+Any advise for common problems or issues.
 ```
-3. Install NPM packages
-```sh
-npm install
-```
-4. Enter your API in `config.js`
-```JS
-const API_KEY = 'ENTER YOUR API';
+command to run if program contains helper info
 ```
 
+## Auteurs
 
+Contributors names and contact info
 
-<!-- USAGE EXAMPLES -->
-## Usage
+[Daan Roth](https://github.com/Appenzeill)
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+## Version History
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+* 0.2
+    * Various bug fixes and optimizations
+    * See [commit change]() or See [release history]()
+* 0.1
+    * Initial Release
 
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-
-<!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+This project is licensed under the GPL-3.0 License - see the LICENSE.md file for details
 
+## Acknowledgments
 
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+Inspiration, code snippets, etc.
+* [awesome-readme](https://github.com/matiassingers/awesome-readme)
+* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* [dbader](https://github.com/dbader/readme-template)
+* [zenorocha](https://gist.github.com/zenorocha/4526327)
+* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
