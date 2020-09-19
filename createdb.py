@@ -25,12 +25,11 @@ connection = psycopg2.connect(
 
 # Cursor for psycopg2
 cursor = connection.cursor()
-    
-userInput = input()
 
-if userInput == "":
-    print("type --help for more options")
-elif userInput == "1":
-    print("It is 1")
-print(userInput)
+cursor.execute("""SELECT table_name FROM information_schema.tables
+       WHERE table_schema = 'public'""")
+for table in cursor.fetchall():
+    print(table)
+    
+# Closes the connection    
 connection.close()
