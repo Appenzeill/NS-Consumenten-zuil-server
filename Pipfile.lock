@@ -45,6 +45,15 @@
             ],
             "version": "==2.11.2"
         },
+        "jproperties": {
+            "hashes": [
+                "sha256:504d7b8d3b2f5f0f52c22c1f72bd50576dca17b01b4cd00d4359c6b0607a59ce",
+                "sha256:84116a04e06e85d84c4bc7bfc45e23d0c956c2efc038f57c47cafffdc0cdad0f",
+                "sha256:864d3296b107e56e693533ff33a9e2d9222636d8affc8e768f213bd07163c071"
+            ],
+            "index": "pypi",
+            "version": "==2.1.0"
+        },
         "markupsafe": {
             "hashes": [
                 "sha256:00bc623926325b26bb9605ae9eae8a215691f33cae5df11ca5424f06f2d1f473",

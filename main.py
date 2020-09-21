@@ -1,36 +1,15 @@
-from jproperties import Properties
-import psycopg2
+from functions.user_input import user_review
+from functions.user_help import user_help
 
-# Config of reading properties from dbconfig.properties using psycopg2.
-configs = Properties()
-with open('dbconfig.properties', 'rb') as config_file:
-    configs.load(config_file)
+import getopt
+import sys
+ 
+argv = sys.argv[1:]
 
-# Database credentials are stored in dbconfig.properties with the file listed in .gitignore
-credentials = [
-    configs.get("db.database").data,
-    configs.get("db.host").data,
-    configs.get("db.username").data,
-    configs.get("db.password").data,
-    configs.get("db.port").data
-]
+if argv[0] == "review":
+    user_review()
+elif argv[0] == "test":
+    print("goede test")
+elif argv[0] == "--help":
+    user_help()
 
-# Connection with the database
-connection = psycopg2.connect(
-        database = credentials[0],
-        host = credentials[1],
-        user = credentials[2],
-        password = credentials[3],
-)
-
-# Cursor for psycopg2
-cursor = connection.cursor()
-    
-userInput = input()
-
-if userInput == "":
-    print("type --help for more options")
-elif userInput == "1":
-    print("It is 1")
-print(userInput)
-connection.close()
