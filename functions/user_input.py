@@ -1,16 +1,30 @@
 # Functie om een user review op te halen.
 def user_review():
-    user_input = input("Hoe was uw dag? Beschrijf dit in 140 of minder characters. \n")
-    user_input_length = len(user_input)
     review_list = []
-    if user_input_length <= 140:
-        print("")
-    elif user_input_length >= 140:
-        print("Uw bericht is te lang, deze mag maximaal 140 characters lang zijn.")
-
-    user_name = input("Wat is uw naam? \n")
-    
-    user_permission = input("Mogen wij dit review Tweeten? (Ja/Nee)\n")
+    print("Wat is uw mening over het openbaar vervoer vandaag? Beschrijf dit in 140 of minder characters")
+    while True:
+        user_review = input()
+        if len(user_review) <= 140:
+            break
+        elif len(user_review) >= 140:
+            print("Te lang, probeer het opnieuw met 140 of minder characters.")
+            
+    print("Wat is uw naam?")
+    while True:
+        user_name = input()
+        if len(user_name) != "":
+            break
+        elif len(user_name) == "":
+            print("Te lang, probeer het opnieuw met 50 of minder characters.")
+            
+    print("Hebben wij toestemming om dit te Tweeten? (Ja/Nee)")
+    while True:
+        user_permission = input()
+        if (user_permission == "Ja") or (user_permission == "ja") or (user_permission == "Nee") or (user_permission == "nee"):
+            break
+        else:
+            print("Geen geldige input, probeer Ja, ja, Nee en nee als input.")
+ 
     
     if (user_permission == "Ja") or (user_permission == "ja"):
         user_consent = "1"
@@ -18,7 +32,7 @@ def user_review():
         user_consent = "0"
         
     table_name = "reviews"
-    review_list = [table_name, user_name, user_input, user_consent] 
+    review_list = [table_name, user_name, user_review, user_consent] 
     
     return(review_list)
     

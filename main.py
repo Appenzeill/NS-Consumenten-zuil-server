@@ -11,7 +11,12 @@ if argv:
         myList = user_review()
         insert_review(myList)
     elif argv[0] == "test":
-        test_insert()
+        while True:
+            myVar = ""
+            myVar = input("Type iets in: \n") 
+            print(len(myVar))
+            if len(myVar) >= 140:
+                break
     elif argv[0] == "--help":
         user_help()
     else:
