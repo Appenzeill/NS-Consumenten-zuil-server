@@ -5,6 +5,7 @@ def test_insert(table_name, user_name, user_review, user_consent):
     print("Review: ")
     print(user_review)
     print("Toestemming voor Tweet:",user_consent)
+    
  
 def user_review():
     user_input = input("Hoe was uw dag? Beschrijf dit in 140 of minder characters. \n")
