@@ -1,5 +1,6 @@
 from jproperties import Properties
 import psycopg2
+from psycopg2 import sql
 
 # Config of reading properties from dbconfig.properties using psycopg2.
 configs = Properties()
@@ -25,3 +26,12 @@ connection = psycopg2.connect(
 # Cursor for psycopg2
 cursor = connection.cursor()
 
+def insert_review():
+    cursor.execute(
+        sql.SQL("insert into {} values (%s, %s)")
+             .format(sql.Identifier('my_table')),
+        [10, 20])
+
+def test_insert(table_name, user_name, user_review, user_consent):
+    print(table_name, user_name, review_content, user_consent)
+    
