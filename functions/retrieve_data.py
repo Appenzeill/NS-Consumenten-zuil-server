@@ -26,7 +26,16 @@ connection = psycopg2.connect(
 # Cursor for psycopg2
 cursor = connection.cursor()
 
-def insert_review(myList):
-    cursor.execute("INSERT INTO reviews (user_name, user_review,user_consent) VALUES(%s, %s, %s)", (myList[1], myList[2], myList[3]))
-    connection.commit() # <- We MUST commit to reflect the inserted data
-    cursor.close()
+def retrieve_reviews():
+    retrieve_reviews_query = "select * from reviews"
+    cursor.execute(retrieve_reviews_query)
+    mobile_records = cursor.fetchall() 
+    reviewList = []
+    for row in mobile_records:
+        #appendList = "{" + "'id': '{}', user_name': '{}', 'user_review': '{}', 'user_consent': '{}', 'review_date': '{}'".format(row[0], row[1].strip(), row[2].strip(), row[3], row[4]) + "}"
+        #appendList = "{"name":"John","age":30,"cars":[ "Ford", "BMW", "Fiat" ]}"
+        #appendList = ['test','test'],['test','test','test']
+        appendList = [row[1],row[2],row[3]]
+        reviewList.append(appendList)
+
+    return(reviewList)

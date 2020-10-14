@@ -1,10 +1,12 @@
 from functions.user_input import user_review
 from functions.insert_data import insert_review
 from functions.user_help import user_help
+from functions.retrieve_data import retrieve_reviews
+from functions.webserver import webserver
 
 import getopt
 import sys
- 
+
 argv = sys.argv[1:]
 if argv:
     if argv[0] == "review":
@@ -19,7 +21,11 @@ if argv:
                 break
     elif argv[0] == "--help":
         user_help()
+    elif argv[0] == "retrieve":
+        print(retrieve_reviews())
+    elif argv[0] == "webserver":
+        webserver(retrieve_reviews())
     else:
         print("Zie --help voor opties.")
 else:
-    user_help
+    user_help()
