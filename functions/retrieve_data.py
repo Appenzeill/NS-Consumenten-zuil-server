@@ -32,10 +32,10 @@ def retrieve_reviews():
     mobile_records = cursor.fetchall() 
     reviewList = []
     for row in mobile_records:
-        #appendList = "{" + "'id': '{}', user_name': '{}', 'user_review': '{}', 'user_consent': '{}', 'review_date': '{}'".format(row[0], row[1].strip(), row[2].strip(), row[3], row[4]) + "}"
-        #appendList = "{"name":"John","age":30,"cars":[ "Ford", "BMW", "Fiat" ]}"
-        #appendList = ['test','test'],['test','test','test']
-        appendList = [row[1],row[2],row[3]]
+        time = "{}".format(row[5])
+        user = " ".join(row[1].split())
+        review = " ".join(row[2].split()) 
+        appendList = [user,review,row[3],row[4],time]
         reviewList.append(appendList)
 
     return(reviewList)

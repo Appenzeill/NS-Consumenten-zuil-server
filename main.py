@@ -3,6 +3,7 @@ from functions.insert_data import insert_review
 from functions.user_help import user_help
 from functions.retrieve_data import retrieve_reviews
 from functions.webserver import webserver
+from functions.crud import crud
 
 import getopt
 import sys
@@ -25,6 +26,8 @@ if argv:
         print(retrieve_reviews())
     elif argv[0] == "webserver":
         webserver(retrieve_reviews())
+    elif argv[0] == "crud":
+        crud(retrieve_reviews())
     else:
         print("Zie --help voor opties.")
 else:

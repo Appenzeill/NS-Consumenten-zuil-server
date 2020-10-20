@@ -29,4 +29,6 @@ cursor = connection.cursor()
 def insert_review(myList):
     cursor.execute("INSERT INTO reviews (user_name, user_review,user_consent) VALUES(%s, %s, %s)", (myList[1], myList[2], myList[3]))
     connection.commit() # <- We MUST commit to reflect the inserted data
-    cursor.close()
+    #cursor.close()
+
+    
