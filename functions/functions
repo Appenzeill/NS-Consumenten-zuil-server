@@ -1,0 +1,10 @@
+  /home/daan/Development/School/Python/NS-Consumenten-zuil-server/functions:
+  total used in directory 44 available 741 GiB
+  drwxr-xr-x. 3 daan daan 4096 26 okt 15:00 .
+  drwxr-xr-x. 4 daan daan 4096 22 okt 17:08 ..
+  -rwxr-xr-x. 1 daan daan 1943 26 okt 14:40 insert_data.py
+  drwxr-xr-x. 2 daan daan 4096 20 okt 10:45 __pycache__
+  -rwxr-xr-x. 1 daan daan 2274 23 okt 15:24 retrieve_data.py
+  -rwxr-xr-x. 1 daan daan  244 20 okt 10:45 user_help.py
+  -rwxr-xr-x. 1 daan daan 2330 22 okt 15:40 user_input.py
+  -rwxr-xr-x. 1 daan daan  173 20 okt 10:45 webserver.py

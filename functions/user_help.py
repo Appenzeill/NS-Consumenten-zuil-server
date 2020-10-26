@@ -1,8 +1,16 @@
 def user_help():
-    print("Usage")
-    print("nszl [OPTION…] [OPTION…]")
-    print("")
-    print("Help Options:")
-    print("  -h, --help                 Show help options")
-    print("  --help-all                 Show all help options")
+    message = """
+nszl [OPTION…]
+    
+Help Options:
+    --help                     Show help options                  
+    
+Webserver Options:
+    --webserver                Launch webserver
+    
+Input Options:
+    --review                   Insert review from terminal
+    --user                     Insert user from terminal
+ """
 
+    print(message)

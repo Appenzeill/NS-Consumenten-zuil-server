@@ -1,4 +1,4 @@
 *.py~
 dbconfig.properties
-.gitignore
-.gitignore~
+*.gitignore
+*.gitignore~
