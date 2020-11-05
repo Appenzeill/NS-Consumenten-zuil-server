@@ -25,4 +25,4 @@ if argv:
     else:
         print("Zie --help voor opties.")
 else:
-    user_help()
+    user_help

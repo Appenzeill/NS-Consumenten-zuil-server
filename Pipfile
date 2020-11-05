@@ -6,12 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+jproperties = "*"
+psycopg2-binary = "*"
 flask = "*"
 flask-httpauth = "*"
-jproperties = "*"
-psycopg2 = "*"
-psycopg2-binary = "*"
-httpbasicauth = "*"
+python-twitter = "*"
 
 [requires]
 python_version = "3.8"

@@ -25,16 +25,44 @@ connection = psycopg2.connect(
 
 # Cursor for psycopg2
 cursor = connection.cursor()
-def retrieve_user():
-    print("lmao")
-
     
 def retrieve_reviews():
-    retrieve_reviews_query = "select * from reviews"
+    retrieve_reviews_query = "select * from reviews order by review_date ASC, review_time ASC;"
     cursor.execute(retrieve_reviews_query)
     mobile_records = cursor.fetchall() 
     reviewList = []
     for row in mobile_records:
+        review_id = row[0] 
+        time = "{}".format(row[5])
+        user = " ".join(row[1].split())
+        review = " ".join(row[2].split()) 
+        appendList = [review_id, user,review,row[3],row[4],time]
+        reviewList.append(appendList)
+
+    return(reviewList)
+
+def retrieve_unapproved_reviews():
+    retrieve_reviews_query = "select * from reviews where mod_approval = false order by review_date ASC, review_time ASC;"
+    cursor.execute(retrieve_reviews_query)
+    mobile_records = cursor.fetchall() 
+    reviewList = []
+    for row in mobile_records:
+        review_id = row[0] 
+        time = "{}".format(row[5])
+        user = " ".join(row[1].split())
+        review = " ".join(row[2].split()) 
+        comment = "{}".format(row[7])
+        appendList = [review_id, user,review,row[3],row[4],time,comment]
+        reviewList.append(appendList)
+
+    return(reviewList)
+
+def retrieve_review(review_id):
+    retrieve_reviews_query = "select * from reviews where review_id = {}".format(review_id)
+    cursor.execute(retrieve_reviews_query)
+    review = cursor.fetchall() 
+    reviewList = []
+    for row in review:
         time = "{}".format(row[5])
         user = " ".join(row[1].split())
         review = " ".join(row[2].split()) 
