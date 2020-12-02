@@ -23,7 +23,10 @@ Project is voornamelijk gemaakt met:
   
 ## Setup
 De applicatie gebruikt dbconfig.properties om de gevoelige data zoals keys en wachtwoorden op te slaan.
+Deze moet in de root van het project.
 Een voorbeeld hiervan is:
+
+dbconfig.properties
 ```
  # DB Properties
  db.username=postgres
