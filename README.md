@@ -81,6 +81,11 @@ Activeer pipenv door pipenv shell uit te voeren:
 $ pipenv shell
 ```
 
+Daarna kan je de dependicies syncen.
+```
+$ pipenv sync
+```
+
 Daarna kan je het programma gebruiken
 ```
 $ python main.py
