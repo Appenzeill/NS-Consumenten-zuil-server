@@ -1,0 +1,39 @@
+<html>
+    <body>    
+    <h2>Insert Review</h2>
+      <form action="http://localhost:5000/reviews/insert" method="post">
+         <p>Review<br><input type="text" name="review" /></p>
+	        <p>Naam<br><input type="text" name="name" /></p>
+	        <select name="consent" id="cars">
+	          <option value="True">Ja</option>
+	          <option value="False">Nee</option>
+	        </select>
+         <p><input type="submit" value="submit" /></p>
+      </form>  
+      <hr>
+      <h2>Moderator Update Review</h2>
+      <form action="http://localhost:5000/reviews/update" method="post">
+         <p>id<br><input type="number" name="user_id"/></p>
+         <p>true/false<br><input type="number" name="approval"/></p>
+	       <p>Approval</p>
+	       <p>Opmerking<br><input type="text" name="comment" /></p>
+         <p><input type="submit" value="submit" /></p>
+      </form>
+      <hr>
+      <h2>Insert User</h2>
+      <form action="http://localhost:5000/users/insert" method="post">
+	      <p>role id<br><input type="number" name="role_id"/></p>
+	      <p>Email<br><input type="text" name="email"/></p>
+	      <p>Wachtwoord<br><input type="password" name="password"/></p>
+        <p><input type="submit" value="submit" /></p>
+      </form>
+      <hr>
+      <h2>Update user </h2>
+      <form action="http://localhost:5000/users/update" method="post">
+	      <p>user id<br><input type="number" name="user_id"/></p>
+	      <p>role id<br><input type="number" name="role_id"/></p>
+	      <p>Email<br><input type="text" name="email"/></p>
+	      <p>Wachtwoord<br><input type="password" name="password"/></p>
+        <p><input type="submit" value="submit" /></p>      </form>
+   </body>
+</html>
